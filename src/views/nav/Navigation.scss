@@ -1,0 +1,55 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #79b5b5;
+    overflow: hidden;
+    width: 220px;
+    height: 100vh;
+    align-items: center;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Style the NavLink inside the navigation bar */
+.topnav .nav-button {
+    display: inline-block; /* Đảm bảo nút hoạt động như block-level */
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-bottom: 10px; /* Khoảng cách giữa các liên kết */
+}
+
+/* Style cho button bên trong NavLink */
+.topnav .nav-button button {
+    color: #f2f2f2;
+    width: 180px;
+    height: 50px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    font-family: Akshar, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+
+/* Change the color of buttons on hover */
+.topnav .nav-button button:hover {
+    background-color: #EEF5DB;
+    color: black;
+}
+
+/* Style the active NavLink */
+.topnav .active button {
+    background-color: white; /* Màu nền cho liên kết đang được chọn */
+    color: black; /* Màu chữ */
+    font-weight: bold; /* Làm nổi bật */
+}
