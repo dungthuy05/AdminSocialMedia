@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { useAuth } from '../libs/authProvider.js';
 
 import Layout from './layout.jsx';
-import AdminPage from './adminPage/AdminPage.js';
-import NewFeed from './adminPage/NewFeed.js';
+import Dashboard from './dashboard/index.jsx';
+import PendingPost from './pending-post/index.jsx';
+// import AdminPage from './adminPage/AdminPage.js';
+// import NewFeed from './adminPage/NewFeed.js';
 import AcceptFriendPage from './friendHomePage/AcceptFriendPage.js';
 import LoginForm from '../components/auth/login.jsx';
 import ForgotPassword from '../components/auth/forgot-password.jsx';
@@ -25,7 +27,7 @@ function App() {
           element={
             <ProtectedRoute LoginUrl={'/login'}>
               <Layout>
-                <AdminPage />
+                <Dashboard />
               </Layout>
             </ProtectedRoute>
           }
@@ -33,11 +35,11 @@ function App() {
 
         {/* route for post */}
         <Route
-          path="/post"
+          path="/pending-post"
           element={
             <ProtectedRoute LoginUrl={'/login'}>
               <Layout>
-                <NewFeed />
+                <PendingPost />
               </Layout>
             </ProtectedRoute>
           }

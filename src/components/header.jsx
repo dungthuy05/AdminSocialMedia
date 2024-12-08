@@ -70,14 +70,14 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed right-0 top-0 bg-blue-500 text-white shadow-md w-full">
+    <header className="fixed z-10 right-0 top-0 bg-blue-500 text-white shadow-md w-full">
       <div className="flex justify-between items-center py-3 px-6">
-        <h1 className="text-lg font-bold">Aitee</h1>
+        <span></span>
         <div className="relative flex items-center space-x-4">
           {/* Notification Bell */}
           <div ref={notificationRef} className="relative">
             <button
-              className="relative text-white p-2 rounded-full hover:bg-gray-700 group"
+              className="relative text-white p-2 rounded-full hover:bg-gray-600 group"
               onClick={() => setIsNotificationOpen(!isNotificationOpen)}
             >
               <img

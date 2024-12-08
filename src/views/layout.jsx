@@ -1,31 +1,14 @@
 import './App.scss';
 import Header from '../components/header.jsx';
-import Navigation from './nav/Navigation.js';
+// import Navigation from './nav/Navigation.js';
+import SideBar from '../components/side-bar.jsx';
 
 export default function Layout({ children }) {
   return (
-    <main className="App flex justify-center gap-5">
+    <main className="App relative flex justify-center gap-5">
       <Header />
-      <div
-        style={{
-          width: '220px', // Chiều rộng cố định của Navigation
-          minWidth: '220px',
-          height: '100%', // Đảm bảo chiều cao đầy đủ
-          display: 'flex',
-        }}
-      >
-        <Navigation />
-      </div>
-      <div
-        style={{
-          flexGrow: 1, // Nội dung chính chiếm phần còn lại
-          overflow: 'auto', // Cuộn nếu nội dung dài hơn
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        {children}
-      </div>
+      <SideBar />
+      <div className="absolute top-[64px] left-[272px] w-[calc(100vw-288px)]">{children}</div>
     </main>
   );
 }
