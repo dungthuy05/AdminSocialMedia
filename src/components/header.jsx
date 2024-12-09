@@ -70,14 +70,29 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed z-10 right-0 top-0 bg-blue-500 text-white shadow-md w-full">
-      <div className="flex justify-between items-center py-3 px-6">
-        <span></span>
-        <div className="relative flex items-center space-x-4">
+    <header className="fixed top-0 left-0 w-full h-[60px] bg-white flex justify-between items-center shadow-md z-50">
+      <div className="flex justify-between items-center w-full px-6">
+        <div className="flex flex-col lg:pl-10 items-center justify-center text-center">
+          <label
+            htmlFor="fname"
+            className="flex flex-col items-center justify-center text-black text-center"
+            style={{
+              textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+              fontFamily: 'Euphoria Script, cursive',
+              fontSize: 50,
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '60px',
+            }}
+          >
+            <Link to="/">Aitee</Link>
+          </label>
+        </div>
+        <div className="relative flex items-center">
           {/* Notification Bell */}
-          <div ref={notificationRef} className="relative">
+          <div ref={notificationRef} className="relative mr-[2px]">
             <button
-              className="relative text-white p-2 rounded-full hover:bg-gray-600 group"
+              className="relative text-white p-2 rounded-full hover:bg-gray-200 group"
               onClick={() => setIsNotificationOpen(!isNotificationOpen)}
             >
               <img
@@ -127,9 +142,11 @@ export default function Header() {
           <div ref={userDropdownRef} className="relative">
             <button
               onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
-              className="bg-white text-blue-500 py-1 px-3 rounded flex items-center space-x-2 hover:bg-gray-200"
+              className="bg-white text-black py-1 px-3 rounded flex items-center sm:space-x-2 hover:bg-gray-200"
             >
-              <span className="text-sm font-medium">{`Welcome, ${user.username || 'User'}!`}</span>
+              <span className="max-sm:hidden text-sm font-medium flex">
+                Welcome,&nbsp;<p className="text-[hsl(0,0,40)]">{user.username || 'User'}</p>!
+              </span>
               <img
                 src={user.avatar || GuestUser}
                 alt="User Avatar"

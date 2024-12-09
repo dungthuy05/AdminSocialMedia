@@ -158,8 +158,6 @@ export default function Post({ post }) {
   const [user, setUser] = useState(null);
   const [currCmtPage, setCurrCmtPage] = useState(0);
 
-  console.log(post);
-
   useEffect(() => {
     const fetchUser = async () => {
       const userData = await getUserBasicInfo(post.userId);
