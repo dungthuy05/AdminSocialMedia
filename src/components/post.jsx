@@ -231,7 +231,7 @@ export default function Post({ post }) {
       </div>
 
       {/* Comments Section */}
-      <div className="flex-1 lg:ml-2 lg:mt-0 mt-2 p-6 bg-gray-50 shadow-md rounded-lg max-h-[496px] overflow-y-auto">
+      <div className="flex-1 lg:ml-2 lg:mt-0 mt-2 p-6 bg-gray-50 shadow-md rounded-lg max-h-[504px] overflow-y-auto">
         <h1 className="text-xl font-bold mb-4 text-blue-800">Comments</h1>
         {comments.length === 0 && <p className="text-gray-500 italic">No comments available.</p>}
 

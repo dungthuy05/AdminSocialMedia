@@ -12,7 +12,7 @@ export default function PendingPost() {
       setLoading(true);
 
       try {
-        const response = await axios.get('/post/802427ea-87b7-4167-8ee5-0333c0bdd7d5');
+        const response = await axios.get('/post/8d043612-feff-491b-8d7c-fd76b46ad747');
         setPost(response.data.post || []);
       } catch (error) {
         console.error('Error while fetching posts:', error);
