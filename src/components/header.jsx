@@ -59,11 +59,11 @@ export default function Header() {
         return;
       }
 
-      await axios.put(`/notification/${notificationId}`);
       setNotifications((prevNotifications) =>
         prevNotifications.map((n) => (n.id === notificationId ? { ...n, status: true } : n)),
       );
       setUnreadCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+      await axios.put(`/notification/${notificationId}`);
     } catch (error) {
       console.error('Error marking notification as read:', error);
     }
